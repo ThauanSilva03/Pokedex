@@ -1,0 +1,167 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    tools:context=".MainActivity">
+
+    <!-- Background visual da Pokédex -->
+
+    <!-- Imagem do Pokémon -->
+
+    <View
+        android:id="@+id/pokedexBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DE482E"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-121dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
+        android:fontFamily="sans-serif-black"
+        android:text="POKEDEX"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorLink="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pokedexBackground" />
+    <View
+        android:id="@+id/dexPokemonContainer"
+        android:layout_width="280dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="16dp"
+        android:background="#BEB7B7"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <View
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dexPokemonContainer" />
+
+    <ImageView
+        android:id="@+id/pokemonImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="Imagem do Pokémon"
+        android:elevation="3dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dexPokemonContainer" />
+
+    <!-- Nome do Pokémon -->
+    <TextView
+        android:id="@+id/pokemonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:elevation="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Nome"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pokemonImage" />
+
+    <!-- Informações detalhadas -->
+    <LinearLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="229dp"
+        android:layout_height="139dp"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonName">
+
+        <TextView
+            android:id="@+id/pokemonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pokemonHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altura:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pokemonWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peso:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pokemonBaseExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experiência Base:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dexPokemonContainer" />
+
+    <EditText
+        android:id="@+id/buscarPokemon"
+        android:layout_width="280dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Digite o nome do pokemon"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="#3A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dexPokemonContainer" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#474545"
+        android:elevation="2dp"
+        android:text="Buscar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
